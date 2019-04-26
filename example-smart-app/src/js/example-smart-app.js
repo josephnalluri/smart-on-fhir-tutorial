@@ -8,6 +8,7 @@
     }
 
     function onReady(smart)  {
+      console.log(JSON.stringify(smart.patient));
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();

@@ -22,6 +22,17 @@
                       }
                     }
                   });
+        var medicationOrder = smart.patient.api.fetchAll({
+          type: 'MedicationOrder',
+          query: {
+            _count: 4
+          }
+        });
+      
+        $.when(pt, medicationOrder).fail(onError);
+        $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
+            console.log(medicationOrder);
+        });
 
         $.when(pt, obv).fail(onError);
 
